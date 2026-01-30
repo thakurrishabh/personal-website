@@ -51,6 +51,17 @@ const ComputerScreenContent = () => {
 
     return (
         <div className="absolute inset-6 flex items-center justify-between gap-12 px-8" onMouseMove={handleMouseMove}>
+            {/* Toronto Skyline Background - Right 30% */}
+            <div className="absolute right-0 top-0 bottom-0 w-[40%] overflow-hidden pointer-events-none -z-10">
+                <div
+                    className="absolute inset-0 bg-cover bg-center opacity-60 mix-blend-loud-light"
+                    style={{ backgroundImage: "url('/toronto-skyline.png')" }}
+                ></div>
+                {/* Gradient Mask to Fade Left into Dark Background */}
+                <div className="absolute inset-0 bg-gradient-to-r from-[#020617] via-transparent to-transparent"></div>
+                {/* Gradient Mask Vertical */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-transparent to-[#020617]"></div>
+            </div>
             {/* Left Side - Content */}
             <div className="flex-1 flex flex-col justify-center space-y-5">
                 {/* Title */}
@@ -86,9 +97,9 @@ const ComputerScreenContent = () => {
 
                 {/* Full Summary */}
                 <p className="text-slate-300 text-sm leading-relaxed max-w-lg font-mono">
-                    AI Cloud Engineer & SRE with <span className="text-emerald-400 font-semibold">4.8 years</span> of hands-on experience building scalable GCP infrastructure for <span className="text-emerald-400 font-semibold">1000+ SDM stores</span> across Canada. Built <span className="text-emerald-400 font-semibold">3 full stack AI Saas apps</span> with one production grade app with payments and security integration.
+                    Helping businesses leverage AI and cloud infrastructure to automate workflows, reduce operational costs, and accelerate time-to-market.
                     <br /><br />
-                    Currently available for projects involving AI integration, cloud engineering, automation, and full-stack AI applications.<motion.span
+                    AI Cloud Engineer & SRE with <span className="text-emerald-400 font-semibold">4.5+ years</span> of hands-on experience building scalable GCP infrastructure for <span className="text-emerald-400 font-semibold">1000+ SDM stores</span> across Canada. Built <span className="text-emerald-400 font-semibold">3 full stack AI Saas apps</span> with one production grade app with google auth, stripe payments and OWASP security integration.<motion.span
                         animate={{ opacity: [0, 1, 0] }}
                         transition={{
                             duration: 5,
@@ -102,7 +113,7 @@ const ComputerScreenContent = () => {
                 {/* Resume & Socials */}
                 <div className="flex items-center gap-6">
                     <a
-                        href="/cv.pdf"
+                        href="https://drive.google.com/file/d/1THQHU2_mhvdsImggXf01RugvOywtpvco/view?usp=sharing"
                         target="_blank"
                         className="inline-flex items-center gap-2 px-5 py-2.5 bg-transparent border-2 border-emerald-400 text-emerald-400 rounded-lg font-semibold text-xs font-mono hover:bg-emerald-400 hover:text-slate-900 transition-all duration-300 uppercase tracking-wider"
                     >
@@ -166,7 +177,7 @@ const ComputerScreenContent = () => {
                     {/* Profile Picture Container */}
                     <div className="relative z-10 w-72 h-72 rounded-full overflow-hidden border-4 border-emerald-400 shadow-[0_0_60px_rgba(16,185,129,0.4)]">
                         <img
-                            src="/profile.jpg"
+                            src="https://zhdgql66cifrjlez.public.blob.vercel-storage.com/profile.jpg"
                             alt="Rishabh Singh Thakur"
                             className="w-full h-full object-cover"
                         />
@@ -181,7 +192,7 @@ const ComputerScreenContent = () => {
                 <div className="flex gap-6">
                     <div className="text-center">
                         <div className="text-3xl font-bold text-white font-mono">
-                            <span>4.8</span>
+                            <span>4.5</span>
                         </div>
                         <div className="text-[10px] text-slate-400 uppercase tracking-wider mt-1 font-mono">Years of<br />experience</div>
                     </div>

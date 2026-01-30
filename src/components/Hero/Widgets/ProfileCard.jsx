@@ -35,7 +35,7 @@ const ProfileCard = () => {
                 <div className="mt-6">
                     {/* Download CV Button */}
                     <a
-                        href="/cv.pdf"
+                        href="https://drive.google.com/file/d/1THQHU2_mhvdsImggXf01RugvOywtpvco/view?usp=sharing"
                         target="_blank"
                         className="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-indigo-700 rounded-xl font-bold text-sm shadow-lg hover:shadow-xl hover:bg-slate-50 transition-all hover:-translate-y-1 active:scale-95"
                     >
@@ -57,7 +57,7 @@ const ProfileCard = () => {
                         {/* Screen */}
                         <div className="w-full h-full bg-slate-950 rounded overflow-hidden relative group">
                             <img
-                                src="/profile.jpg"
+                                src="https://zhdgql66cifrjlez.public.blob.vercel-storage.com/profile.jpg"
                                 alt="Rishabh Singh Thakur"
                                 className="w-full h-full object-cover object-top opacity-90 group-hover:opacity-100 transition-opacity"
                             />

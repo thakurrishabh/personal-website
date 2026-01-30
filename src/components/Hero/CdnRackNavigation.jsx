@@ -119,37 +119,32 @@ const CdnRackNavigation = () => {
                     <div className="absolute bottom-1 right-1 w-1 h-1 rounded-full bg-slate-300"></div>
                 </motion.a>
 
-                {/* Guitar / Music Node - Standout (Sunburst Finish) */}
+                {/* Guitar / Music Node - Standard */}
                 <motion.a
                     href="https://www.instagram.com/guitar_symphonies?igsh=MTRmbjFjbjBpZ2k1Mg=="
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="relative group h-12 min-w-[100px] flex items-center justify-between px-4 border-l border-slate-300/20 bg-gradient-to-br from-amber-700 via-orange-800 to-red-900 hover:from-amber-600 hover:to-orange-700 transition-all cursor-pointer overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.15)]"
+                    className={`relative group h-12 min-w-[100px] flex items-center justify-between px-4 border-r border-slate-300/20 bg-gradient-to-b from-slate-50 to-slate-100 hover:from-white hover:to-white transition-all cursor-pointer`}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.7, duration: 0.5 }}
                 >
-                    {/* Rack Handle (Brass/Gold look) */}
-                    <div className="w-1 h-6 rounded-full bg-slate-800/80 group-hover:bg-yellow-400 transition-colors border border-white/10"></div>
+                    {/* Rack Handle */}
+                    <div className="w-1 h-6 rounded-full bg-slate-300 group-hover:bg-indigo-400 transition-colors"></div>
 
-                    {/* Label Group */}
-                    <div className="flex flex-col items-center">
-                        <span className="text-[8px] text-amber-200/60 font-mono tracking-wider mb-0.5">IG_LINK</span>
-                        <span className="text-xs font-bold text-white tracking-widest uppercase group-hover:text-amber-100 drop-shadow-md">
-                            Guitar
-                        </span>
-                    </div>
+                    {/* Label */}
+                    <span className={`text-xs font-mono font-bold tracking-widest text-slate-500 group-hover:text-indigo-500 uppercase`}>
+                        Guitar
+                    </span>
 
-                    {/* Status Light - Recording/Live */}
-                    <div className="relative">
-                        <div className="w-2 h-2 rounded-full bg-red-500 shadow-[0_0_10px_rgba(239,68,68,0.8)] animate-pulse"></div>
-                    </div>
+                    {/* Status Light */}
+                    <div className={`w-2 h-2 rounded-full bg-slate-300 group-hover:bg-green-400 transition-all`}></div>
 
-                    {/* Decorative Screws (Darker for Contrast) */}
-                    <div className="absolute top-1 left-1 w-1 h-1 rounded-full bg-slate-900/50"></div>
-                    <div className="absolute bottom-1 left-1 w-1 h-1 rounded-full bg-slate-900/50"></div>
-                    <div className="absolute top-1 right-1 w-1 h-1 rounded-full bg-slate-900/50"></div>
-                    <div className="absolute bottom-1 right-1 w-1 h-1 rounded-full bg-slate-900/50"></div>
+                    {/* Mounting Screws */}
+                    <div className="absolute top-1 left-1 w-1 h-1 rounded-full bg-slate-300"></div>
+                    <div className="absolute bottom-1 left-1 w-1 h-1 rounded-full bg-slate-300"></div>
+                    <div className="absolute top-1 right-1 w-1 h-1 rounded-full bg-slate-300"></div>
+                    <div className="absolute bottom-1 right-1 w-1 h-1 rounded-full bg-slate-300"></div>
                 </motion.a>
             </div>
 
