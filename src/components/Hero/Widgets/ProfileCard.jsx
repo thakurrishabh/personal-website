@@ -35,7 +35,7 @@ const ProfileCard = () => {
                 <div className="mt-6">
                     {/* Download CV Button */}
                     <a
-                        href="https://drive.google.com/file/d/1THQHU2_mhvdsImggXf01RugvOywtpvco/view?usp=sharing"
+                        href="https://drive.google.com/file/d/1LsU3qoa8cM3k7Y4TFzyY7UZ6InDJAtS4/view?usp=drive_link"
                         target="_blank"
                         className="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-indigo-700 rounded-xl font-bold text-sm shadow-lg hover:shadow-xl hover:bg-slate-50 transition-all hover:-translate-y-1 active:scale-95"
                     >
