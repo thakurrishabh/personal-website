@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { skillsData } from '../../data/skillsData';
+import { useState, useEffect } from 'react';
 
 // Icons
 const DockerIcon = () => (
@@ -10,11 +11,21 @@ const DockerIcon = () => (
 
 // Minimalist Tech Badge
 const TechBadge = ({ skill, index }) => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
     return (
         <motion.div
             className="flex items-center gap-2.5 px-3 py-2 bg-white/5 hover:bg-white/10 border border-white/5 hover:border-white/20 rounded-lg transition-all duration-200 group/pill cursor-default"
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={isMobile ? { opacity: 1, scale: 0.95 } : { opacity: 0, scale: 0.95 }}
+            whileInView={isMobile ? undefined : { opacity: 1, scale: 1 }}
+            animate={isMobile ? { opacity: 1, scale: 1 } : undefined}
             transition={{ duration: 0.2, delay: index * 0.02 }}
         >
             {/* Icon */}
@@ -42,16 +53,26 @@ const TechBadge = ({ skill, index }) => {
 
 // Modern Posh Repository Card
 const RepositoryModule = ({ category, index }) => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
     // Sort skills alphabetically
     const sortedSkills = [...category.skills].sort((a, b) => a.name.localeCompare(b.name));
 
     return (
         <motion.div
             className="relative flex flex-col h-full"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
+            animate={isMobile ? { opacity: 1, y: 0 } : undefined}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            viewport={{ once: true }}
+            viewport={isMobile ? undefined : { once: true }}
         >
             {/* Card Container: Clean, Matte, Deep Charcoal */}
             <div className="flex-1 bg-[#151E32] rounded-xl border border-slate-700/50 hover:border-slate-600 transition-colors duration-300 overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-black/20 flex flex-col group">

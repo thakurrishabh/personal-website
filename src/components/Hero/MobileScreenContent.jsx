@@ -25,6 +25,7 @@ const AnimatedCounter = ({ end, duration = 2, suffix = "" }) => {
 
 const MobileScreenContent = () => {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+    const [isHovered, setIsHovered] = useState(false);
 
     const handleMouseMove = (e) => {
         const rect = e.currentTarget.getBoundingClientRect();
@@ -61,10 +62,25 @@ const MobileScreenContent = () => {
                     <h2 className="text-lg font-light text-white font-mono">
                         Hello I'm
                     </h2>
-                    <h1 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-cyan-400 pb-1 leading-tight">
-                        Rishabh Singh<br />
-                        Thakur
-                    </h1>
+                    <div
+                        className="relative inline-block cursor-pointer select-none group"
+                        onMouseEnter={() => setIsHovered(true)}
+                        onMouseLeave={() => setIsHovered(false)}
+                        onClick={() => setIsHovered(!isHovered)}
+                    >
+                        {/* Smooth Block Highlight Overlay */}
+                        <motion.div
+                            className="absolute -inset-x-2 inset-y-0 bg-[#10b981] z-0"
+                            initial={{ scaleX: 0 }}
+                            animate={{ scaleX: isHovered ? 1 : 0 }}
+                            transition={{ duration: 0.25, ease: [0.19, 1, 0.22, 1] }}
+                            style={{ originX: 0 }}
+                        />
+                        <h1 className={`relative z-10 text-3xl font-bold font-mono transition-colors duration-200 leading-tight ${isHovered ? 'text-black' : 'text-emerald-400'}`}>
+                            Rishabh Singh<br />
+                            Thakur
+                        </h1>
+                    </div>
                 </div>
 
                 {/* 2. Profile & Stats (Mobile Version) */}
@@ -126,7 +142,7 @@ const MobileScreenContent = () => {
                 </div>
 
                 {/* 3. Bio (Mobile Version - 17px) */}
-                <div className="max-w-xl text-center shrink-0">
+                <div className="max-w-xl text-left shrink-0">
                     <div className="text-zinc-300 text-[17px] leading-tight block mt-2 mb-2">
                         Helping businesses leverage AI and cloud infrastructure to automate workflows, reduce operational costs, and accelerate time-to-market.
                         <br /><br />

@@ -2,6 +2,7 @@ import { educationData } from '../../data/educationData';
 import CloudRouter from '../Shared/CloudRouter';
 import NetworkTrunk from '../Shared/NetworkTrunk';
 import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 
 // --- FLOATING BACKGROUND ELEMENTS ---
 const FloatingTechIcons = () => {
@@ -69,11 +70,21 @@ const CircuitPattern = () => (
 
 // --- EDUCATION: DATABASE SERVER RACK ---
 const DatabaseServer = ({ data, index }) => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
     return (
         <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            initial={isMobile ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
+            whileInView={isMobile ? undefined : { opacity: 1, x: 0 }}
+            animate={isMobile ? { opacity: 1, x: 0 } : undefined}
+            viewport={isMobile ? undefined : { once: true }}
             transition={{ delay: index * 0.15, type: "spring" }}
             className="group relative"
         >
@@ -131,14 +142,24 @@ const DatabaseServer = ({ data, index }) => {
 
 // --- CERTIFICATES: SECURITY VAULT WITH HOLOGRAPHIC DISPLAY ---
 const SecurityVault = ({ data, index }) => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
     return (
         <motion.a
             href={data.link}
             target="_blank"
             rel="noopener noreferrer"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
+            initial={isMobile ? { opacity: 1, scale: 0.9 } : { opacity: 0, scale: 0.9 }}
+            whileInView={isMobile ? undefined : { opacity: 1, scale: 1 }}
+            animate={isMobile ? { opacity: 1, scale: 1 } : undefined}
+            viewport={isMobile ? undefined : { once: true }}
             transition={{ delay: index * 0.1 }}
             whileHover={{ scale: 1.03, rotateY: 5 }}
             className="group block relative"
@@ -185,6 +206,15 @@ const SecurityVault = ({ data, index }) => {
 
 // --- PERSONAL ATTRIBUTES: COMPACT CARDS WITH EMOJIS ---
 const PersonalAttribute = ({ title, items, emoji, color, index }) => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
     const colors = {
         orange: { border: "border-orange-500/30", text: "text-orange-400", bg: "bg-orange-500/10" },
         cyan: { border: "border-cyan-500/30", text: "text-cyan-400", bg: "bg-cyan-500/10" },
@@ -194,9 +224,10 @@ const PersonalAttribute = ({ title, items, emoji, color, index }) => {
 
     return (
         <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            initial={isMobile ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
+            whileInView={isMobile ? undefined : { opacity: 1, x: 0 }}
+            animate={isMobile ? { opacity: 1, x: 0 } : undefined}
+            viewport={isMobile ? undefined : { once: true }}
             transition={{ delay: index * 0.1 }}
             className="group"
         >

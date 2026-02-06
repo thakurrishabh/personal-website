@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 import PodProject from './PodProject';
 
-// SimpleIcons slug mapping helper
 // SimpleIcons slug mapping helper
 const getTechSlug = (tech) => {
     const map = {
@@ -123,6 +123,17 @@ const TechBadge = ({ tech }) => {
 
 
 const ClusterNode = ({ node, index }) => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
     // Aggregate unique skills from Node and all Pods
     const allSkills = new Set(node.skills || []);
     if (node.pods) {
@@ -137,9 +148,10 @@ const ClusterNode = ({ node, index }) => {
     return (
         <motion.div
             className="relative md:ml-[25%]"
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, amount: 0.1 }}
+            initial={isMobile ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+            animate={isMobile ? { opacity: 1, x: 0 } : undefined}
+            whileInView={isMobile ? undefined : { opacity: 1, x: 0 }}
+            viewport={isMobile ? undefined : { once: false, amount: 0.1 }}
             transition={{ duration: 0.6, delay: 0.1 }}
         >
             {/* Timeline Connector Line (Left side) */}

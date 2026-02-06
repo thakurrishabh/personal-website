@@ -42,7 +42,7 @@ const WorkSection = () => {
                     </div>
 
                     {/* Cluster Nodes Timeline */}
-                    <div className="max-w-6xl mx-auto space-y-32">
+                    <div className="max-w-6xl mx-auto space-y-16 md:space-y-32">
                         {experienceData.map((node, index) => (
                             <ClusterNode key={node.id} node={node} index={index} />
                         ))}

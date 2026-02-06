@@ -1,18 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import DockerImageCard from './DockerImageCard';
 
 const RegistryRepository = ({ category, index }) => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
     // Sort skills alphabetically
     const sortedSkills = [...category.skills].sort((a, b) => a.name.localeCompare(b.name));
 
     return (
         <motion.div
             className="w-full mb-8 last:mb-0"
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={isMobile ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+            whileInView={isMobile ? undefined : { opacity: 1, x: 0 }}
+            animate={isMobile ? { opacity: 1, x: 0 } : undefined}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            viewport={{ once: true }}
+            viewport={isMobile ? undefined : { once: true }}
         >
             {/* Repository Header - Terminal Style */}
             <div className="flex items-center gap-3 mb-4 pl-2 border-l-2 border-slate-700 bg-gradient-to-r from-slate-900/50 to-transparent py-2 px-4 rounded-r-lg">

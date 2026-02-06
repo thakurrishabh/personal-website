@@ -1,12 +1,23 @@
 import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 
 const PodProject = ({ pod }) => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
     return (
         <motion.div
             className="group relative bg-slate-900 border border-slate-700/60 rounded-xl p-5 overflow-hidden hover:border-blue-400/50 transition-colors duration-300"
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
+            initial={isMobile ? { opacity: 1, scale: 0.95 } : { opacity: 0, scale: 0.95 }}
+            whileInView={isMobile ? undefined : { opacity: 1, scale: 1 }}
+            animate={isMobile ? { opacity: 1, scale: 1 } : undefined}
+            viewport={isMobile ? undefined : { once: true }}
             whileHover={{ y: -4 }}
         >
             {/* Status Indicator */}

@@ -1,14 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 const DockerImageCard = ({ skill, index }) => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
     return (
         <motion.div
             className="group relative flex flex-col bg-[#0f172a] border border-slate-800 hover:border-teal-500/50 rounded-md overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(20,184,166,0.15)] hover:-translate-y-1"
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={isMobile ? { opacity: 1, scale: 0.95 } : { opacity: 0, scale: 0.95 }}
+            whileInView={isMobile ? undefined : { opacity: 1, scale: 1 }}
+            animate={isMobile ? { opacity: 1, scale: 1 } : undefined}
             transition={{ duration: 0.2, delay: index * 0.03 }}
-            viewport={{ once: true }}
+            viewport={isMobile ? undefined : { once: true }}
         >
             {/* Top Status Strip */}
             <div className="h-1 w-full bg-slate-800 group-hover:bg-teal-500 transition-colors duration-300"></div>

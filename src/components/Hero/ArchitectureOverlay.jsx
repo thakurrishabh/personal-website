@@ -33,7 +33,7 @@ const ArchitectureOverlay = () => {
                 <div className="absolute -top-3 left-[clamp(1rem,3vw,2rem)] px-2 bg-[#F7F7F7] text-slate-400 text-xs font-mono font-semibold tracking-wider flex items-center gap-2">
                     <div className="w-2 h-2 rounded-full bg-slate-400"></div>
                     <span className="hidden sm:inline">VPC: production-portfolio</span>
-                    <span className="sm:hidden">VPC: prod</span>
+                    <span className="sm:hidden">VPC: production-portfolio</span>
                 </div>
 
                 {/* Interior Grid/Texture (Optional) */}
@@ -51,7 +51,7 @@ const ArchitectureOverlay = () => {
                         <div className="absolute -top-3 left-[clamp(0.75rem,2vw,1.5rem)] px-2 bg-transparent backdrop-blur-md text-blue-400 text-[clamp(0.625rem,1.5vw,0.75rem)] font-mono font-semibold tracking-wider flex items-center gap-2">
                             <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></div>
                             <span className="hidden sm:inline">SUBNET: bio-layer (ca-toronto-on-1a)</span>
-                            <span className="sm:hidden">SUBNET: bio</span>
+                            <span className="sm:hidden">SUBNET: bio-layer (ca-toronto-on-1a)</span>
                         </div>
 
                         {/* Dashboard Placement Area */}
