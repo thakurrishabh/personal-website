@@ -105,7 +105,7 @@ const CdnRackNavigation = () => {
     return (
         <div className="w-full max-w-3xl mx-auto z-50 relative">
             {/* Desktop View (md+) - Unchanged */}
-            <div className="hidden md:flex w-full h-16 bg-slate-200 rounded-b-xl border-x-4 border-b-4 border-slate-300 shadow-xl items-center justify-center gap-2 px-2">
+            <div className="hidden md:flex w-full h-16 bg-slate-200 rounded-b-xl border-x-4 border-b-4 border-slate-300 shadow-xl items-center justify-center px-2">
                 <ServerBlade label="Home" href="#" isActive={activeSection === 'home'} delay={0.1} />
                 <ServerBlade label="Work" href="#work" isActive={activeSection === 'work'} delay={0.2} />
                 <ServerBlade label="Skills" href="#skills" isActive={activeSection === 'skills'} delay={0.3} />
@@ -116,7 +116,7 @@ const CdnRackNavigation = () => {
                     href="https://dev.to/thakurrishabh"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="relative group h-14 min-w-[120px] mx-2 flex items-center justify-center bg-slate-800 rounded-md border border-slate-600 shadow-inner cursor-pointer flex-shrink-0"
+                    className="relative group h-14 min-w-[120px] flex items-center justify-center bg-slate-800 rounded-md border border-slate-600 shadow-inner cursor-pointer flex-shrink-0"
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5 }}

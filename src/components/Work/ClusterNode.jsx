@@ -174,7 +174,7 @@ const ClusterNode = ({ node, index }) => {
                         {uniqueSkills.length > 0 && (
                             <div className="flex flex-col gap-3 md:items-end mt-4">
                                 <h4 className="text-[10px] font-mono uppercase tracking-widest text-slate-500 font-bold">Stack Components</h4>
-                                <div className="bg-slate-900/40 border border-slate-800 rounded-xl p-4 grid grid-cols-1 xl:grid-cols-2 gap-3 w-full md:w-[280px] backdrop-blur-sm shadow-inner">
+                                <div className="bg-slate-900/40 border border-slate-800 rounded-xl p-4 flex flex-wrap gap-2 w-full md:w-[280px] backdrop-blur-sm shadow-inner justify-start">
                                     {uniqueSkills.map(skill => (
                                         <div key={skill} className="flex justify-start">
                                             <TechBadge tech={skill} />

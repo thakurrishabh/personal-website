@@ -142,7 +142,7 @@ const MobileScreenContent = () => {
                 {/* 4. Buttons */}
                 <div className="flex flex-col items-center gap-3 w-full shrink-0">
                     <motion.a
-                        href="/resume.pdf"
+                        href="https://drive.google.com/file/d/1Dr2pXZ_IN8C1XubkUKRR20xb0zu1cmuP/view?usp=drive_link"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group relative px-6 py-2 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/50 rounded-lg overflow-hidden transition-all duration-300 flex items-center gap-2"

@@ -263,7 +263,7 @@ const EducationSection = () => {
                 <div className="relative w-full max-w-[1400px] mx-auto border border-blue-500/20 bg-slate-900/20 rounded-3xl p-6 md:p-12 shadow-2xl backdrop-blur-sm">
 
                     {/* Subnet Header */}
-                    <div className="absolute -top-3 left-8 px-3 py-1 bg-[#0B1120] border border-blue-500/30 rounded-full flex items-center gap-2 shadow-[0_0_10px_rgba(59,130,246,0.2)]">
+                    <div className="absolute top-6 left-6 md:left-8 px-3 py-1 bg-[#0B1120] border border-blue-500/30 rounded-full flex items-center gap-2 shadow-[0_0_10px_rgba(59,130,246,0.2)]">
                         <div className="w-1.5 h-1.5 rounded-full bg-blue-400"></div>
                         <span className="text-[10px] font-mono text-blue-400 font-bold tracking-widest uppercase">
                             SUBNET: data-persistence-layer
@@ -271,7 +271,7 @@ const EducationSection = () => {
                     </div>
 
                     {/* Title */}
-                    <div className="text-center mb-16 mt-8">
+                    <div className="text-center mb-16 mt-16">
                         <h2 className="text-4xl md:text-5xl font-black text-white tracking-tighter mb-3">
                             Knowledge <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">Infrastructure</span>
                         </h2>

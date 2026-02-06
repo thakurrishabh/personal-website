@@ -38,7 +38,7 @@ const SkillsSection = () => {
                     <div className="absolute bottom-0 right-0 w-32 h-32 border-r-2 border-b-2 border-teal-500/30 rounded-br-xl pointer-events-none"></div>
 
                     {/* Subnet Label */}
-                    <div className="absolute top-6 left-8 flex items-center gap-3 px-4 py-1 bg-teal-950/30 border border-teal-800/50 rounded-full">
+                    <div className="absolute top-6 left-6 md:left-8 flex items-center gap-3 px-4 py-1 bg-teal-950/30 border border-teal-800/50 rounded-full">
                         <div className="w-2 h-2 bg-teal-400 rounded-full animate-ping"></div>
                         <span className="font-mono text-xs text-teal-400 font-bold tracking-widest uppercase">
                             SUBNET: skills-registry
@@ -46,7 +46,7 @@ const SkillsSection = () => {
                     </div>
 
                     {/* Header Section */}
-                    <div className="text-center mb-20 mt-8">
+                    <div className="text-center mb-20 mt-16">
                         <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter mb-4 uppercase font-mono">
                             SKILL <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-400">REGISTRY</span>
                         </h2>

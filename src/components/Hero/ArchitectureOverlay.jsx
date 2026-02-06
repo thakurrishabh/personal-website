@@ -64,7 +64,7 @@ const ArchitectureOverlay = () => {
                             <CloudRouter label="BIO_ROUTER" direction="down" />
 
                             {/* Egress Traffic Trunk - Full Visual */}
-                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 h-[clamp(8rem,15vh,12rem)] w-[clamp(4rem,10vw,8rem)] -z-10 overflow-visible pointer-events-none">
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 h-[clamp(8rem,15vh,12rem)] w-32 -z-10 overflow-visible pointer-events-none">
                                 {/* Trunk Container */}
                                 <div className="relative w-full h-full flex justify-between px-2">
                                     {[...Array(8)].map((_, i) => (
