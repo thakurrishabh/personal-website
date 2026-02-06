@@ -3,10 +3,16 @@ import NetworkSignals from './NetworkSignals';
 import ParticleEffects from './ParticleEffects';
 import ArchitectureOverlay from './ArchitectureOverlay';
 import FloatingObjects from './FloatingObjects';
+import CdnRackNavigation from './CdnRackNavigation';
 
 const HeroBackground = () => {
     return (
         <div className="relative w-full h-screen overflow-hidden bg-gradient-to-b from-sky-100 to-white">
+            {/* Top Navigation - Fixed at the top, above everything */}
+            <div className="absolute top-0 left-0 w-full z-[100] pointer-events-auto flex justify-center">
+                <CdnRackNavigation />
+            </div>
+
             {/* Bio Subnet Focus - Hero Background (V3: Sky & Servers) */}
 
             {/* 1. Cloud Layer (Deepest) */}

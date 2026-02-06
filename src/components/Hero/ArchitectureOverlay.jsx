@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import BioDashboard from './BioDashboard';
-import CdnRackNavigation from './CdnRackNavigation';
 import CloudRouter from '../Shared/CloudRouter';
 
 const ArchitectureOverlay = () => {
@@ -21,10 +20,6 @@ const ArchitectureOverlay = () => {
 
     return (
         <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
-            {/* Top Navigation Rack (Fixed to Top of Screen) */}
-            <div className="fixed top-0 left-1/2 -translate-x-1/2 z-50 w-full max-w-3xl pointer-events-auto">
-                <CdnRackNavigation />
-            </div>
 
             {/* VPC Container */}
             <motion.div
@@ -35,16 +30,17 @@ const ArchitectureOverlay = () => {
             >
 
                 {/* VPC Label */}
-                <div className="absolute -top-3 left-8 px-2 bg-[#F7F7F7] text-slate-400 text-xs font-mono font-semibold tracking-wider flex items-center gap-2">
+                <div className="absolute -top-3 left-[clamp(1rem,3vw,2rem)] px-2 bg-[#F7F7F7] text-slate-400 text-xs font-mono font-semibold tracking-wider flex items-center gap-2">
                     <div className="w-2 h-2 rounded-full bg-slate-400"></div>
-                    VPC: production-portfolio
+                    <span className="hidden sm:inline">VPC: production-portfolio</span>
+                    <span className="sm:hidden">VPC: prod</span>
                 </div>
 
                 {/* Interior Grid/Texture (Optional) */}
                 <div className="absolute inset-0 opacity-[0.02] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
 
                 {/* Subnet Container (Centered with more padding from VPC) */}
-                <div className="absolute inset-0 flex items-center justify-center pt-20 pb-20 px-8">
+                <div className="absolute inset-0 flex items-center justify-center pt-[clamp(5rem,15vh,6rem)] pb-[clamp(3rem,8vh,5rem)] px-[clamp(0.5rem,2vw,2rem)]">
                     <motion.div
                         className="relative w-full max-w-[1400px] h-fit border border-blue-200/40 bg-blue-50/5 rounded-2xl shadow-sm pointer-events-auto"
                         initial={{ opacity: 0, y: 20 }}
@@ -52,13 +48,14 @@ const ArchitectureOverlay = () => {
                         transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                     >
                         {/* Subnet Label */}
-                        <div className="absolute -top-3 left-6 px-2 bg-transparent backdrop-blur-md text-blue-400 text-xs font-mono font-semibold tracking-wider flex items-center gap-2">
+                        <div className="absolute -top-3 left-[clamp(0.75rem,2vw,1.5rem)] px-2 bg-transparent backdrop-blur-md text-blue-400 text-[clamp(0.625rem,1.5vw,0.75rem)] font-mono font-semibold tracking-wider flex items-center gap-2">
                             <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></div>
-                            SUBNET: bio-layer (ca-toronto-on-1a)
+                            <span className="hidden sm:inline">SUBNET: bio-layer (ca-toronto-on-1a)</span>
+                            <span className="sm:hidden">SUBNET: bio</span>
                         </div>
 
                         {/* Dashboard Placement Area */}
-                        <div className="w-full relative p-4" id="bio-dashboard-container">
+                        <div className="w-full relative p-[clamp(0.5rem,2vw,1rem)]" id="bio-dashboard-container">
                             <BioDashboard />
                         </div>
 
@@ -67,7 +64,7 @@ const ArchitectureOverlay = () => {
                             <CloudRouter label="BIO_ROUTER" direction="down" />
 
                             {/* Egress Traffic Trunk - Full Visual */}
-                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 h-48 w-32 -z-10 overflow-visible pointer-events-none">
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 h-[clamp(8rem,15vh,12rem)] w-[clamp(4rem,10vw,8rem)] -z-10 overflow-visible pointer-events-none">
                                 {/* Trunk Container */}
                                 <div className="relative w-full h-full flex justify-between px-2">
                                     {[...Array(8)].map((_, i) => (
@@ -99,7 +96,7 @@ const ArchitectureOverlay = () => {
 
                                 {/* Trunk Label */}
                                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50">
-                                    <div className="bg-slate-950/80 border border-slate-700/50 backdrop-blur-md px-2 py-0.5 rounded text-[10px] font-mono text-blue-500/80 tracking-widest flex items-center gap-1.5 shadow-lg">
+                                    <div className="bg-slate-950/80 border border-slate-700/50 backdrop-blur-md px-2 py-0.5 rounded text-[clamp(0.5rem,1.2vw,0.625rem)] font-mono text-blue-500/80 tracking-widest flex items-center gap-1.5 shadow-lg">
                                         {direction === 'down' ? (
                                             <>
                                                 LINK_ACT <span className="animate-pulse">▲</span>

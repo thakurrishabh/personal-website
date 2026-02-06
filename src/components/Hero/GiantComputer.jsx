@@ -3,9 +3,9 @@ import ComputerScreenContent from './ComputerScreenContent';
 
 const GiantComputer = () => {
     return (
-        <div className="w-full h-full flex items-center justify-center p-8">
+        <div className="w-full h-full flex items-center justify-center p-2 sm:p-4 md:p-8">
             <motion.div
-                className="relative w-full max-w-5xl aspect-[3/2]"
+                className="relative w-full max-w-5xl aspect-[4/3] sm:aspect-[3/2]"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
