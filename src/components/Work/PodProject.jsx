@@ -55,7 +55,7 @@ const PodProject = ({ pod }) => {
 
                 {/* Right Video Screen (Integraded) */}
                 {pod.video && (
-                    <div className="flex-1 min-w-[300px] relative z-10 hidden md:block">
+                    <div className="flex-1 min-w-full md:min-w-[300px] relative z-10 block aspect-video md:aspect-auto">
                         {/* Monitor Frame - Industrial Style */}
                         <div className="relative bg-slate-950/50 rounded-lg p-1.5 border-2 border-slate-700/50 shadow-xl overflow-hidden group/screen h-full flex flex-col">
 

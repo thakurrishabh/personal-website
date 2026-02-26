@@ -167,8 +167,6 @@ Skill Engine
 - Data Engineering
 ```
 
-All nodes, DB, CDN, Dashboard connect here.
-
 ---
 
 # 🎓 EDUCATION

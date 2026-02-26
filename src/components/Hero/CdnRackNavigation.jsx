@@ -65,7 +65,7 @@ const CdnRackNavigation = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            const sections = ['work', 'skills', 'education', 'contact'];
+            const sections = ['work', 'projects', 'skills', 'education', 'contact'];
             const current = sections.find(section => {
                 const element = document.getElementById(section);
                 if (element) {
@@ -95,6 +95,7 @@ const CdnRackNavigation = () => {
     const navItems = [
         { label: 'Home', href: '#' },
         { label: 'Work', href: '#work' },
+        { label: 'Projects', href: '#projects' },
         { label: 'Skills', href: '#skills' },
         { label: 'Education', href: '#education' },
         { label: 'Blog', href: 'https://dev.to/thakurrishabh' },
@@ -103,11 +104,12 @@ const CdnRackNavigation = () => {
     ];
 
     return (
-        <div className="w-full max-w-3xl mx-auto z-50 relative">
+        <div className="w-full max-w-4xl mx-auto z-50 relative">
             {/* Desktop View (md+) - Unchanged */}
             <div className="hidden md:flex w-full h-16 bg-slate-200 rounded-b-xl border-x-4 border-b-4 border-slate-300 shadow-xl items-center justify-center px-2">
                 <ServerBlade label="Home" href="#" isActive={activeSection === 'home'} delay={0.1} />
                 <ServerBlade label="Work" href="#work" isActive={activeSection === 'work'} delay={0.2} />
+                <ServerBlade label="Projects" href="#projects" isActive={activeSection === 'projects'} delay={0.25} />
                 <ServerBlade label="Skills" href="#skills" isActive={activeSection === 'skills'} delay={0.3} />
                 <ServerBlade label="Education" href="#education" isActive={activeSection === 'education'} delay={0.4} />
 
