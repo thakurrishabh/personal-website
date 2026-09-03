@@ -113,7 +113,7 @@ const DesktopScreenContent = () => {
                 {/* Resume & Socials */}
                 <div className="flex items-center gap-6">
                     <a
-                        href="https://drive.google.com/file/d/1Dr2pXZ_IN8C1XubkUKRR20xb0zu1cmuP/view?usp=drive_link"
+                        href="/Rishabh_Singh_Thakur_Resume.pdf"
                         target="_blank"
                         className="inline-flex items-center gap-2 px-5 py-2.5 bg-transparent border-2 border-emerald-400 text-emerald-400 rounded-lg font-semibold text-xs font-mono hover:bg-emerald-400 hover:text-slate-900 transition-all duration-300 uppercase tracking-wider"
                     >
