@@ -4,7 +4,7 @@ export const projectsData = [
         role: "Personal Projects",
         company: "Independent",
         location: "Toronto, Canada",
-        period: "09/2024 – Present",
+        period: "09/2024 – 10/2025",
         status: "Scaling",
         type: "Node",
         skills: [
