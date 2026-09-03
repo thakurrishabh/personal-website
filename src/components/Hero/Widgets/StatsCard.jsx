@@ -12,7 +12,7 @@ const StatsCard = () => {
                 <StatCard
                     cols="grow" // Special case handled by className
                     label="Uptime"
-                    value="4y+"
+                    value="5y+"
                     subtext="Cloud & SRE Exp."
                     color="bg-[#fdba74]" // Amber
                     labelColor="text-orange-950"
