@@ -3,6 +3,7 @@ import WorkSection from './components/Work/WorkSection';
 import ProjectsSection from './components/Projects/ProjectsSection';
 import SkillsSection from './components/Skills/SkillsSection';
 import EducationSection from './components/Education/EducationSection';
+import ContactSection from './components/Contact/ContactSection';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <ProjectsSection />
       <SkillsSection />
       <EducationSection />
+      <ContactSection />
     </div>
   );
 }
