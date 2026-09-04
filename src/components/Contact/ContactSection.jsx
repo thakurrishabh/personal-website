@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { useState } from 'react';
 import CloudRouter from '../Shared/CloudRouter';
 import NetworkTrunk from '../Shared/NetworkTrunk';
@@ -15,7 +14,7 @@ const ContactSection = () => {
 
         if (!ACCESS_KEY) {
             setStatus('error');
-            setError('Form is not wired yet. Add VITE_WEB3FORMS_ACCESS_KEY in Vercel.');
+            setError('Form key missing in this build. Redeploy Vercel after setting VITE_WEB3FORMS_ACCESS_KEY.');
             return;
         }
 
