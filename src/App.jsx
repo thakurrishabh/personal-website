@@ -3,6 +3,8 @@ import WorkSection from './components/Work/WorkSection';
 import ProjectsSection from './components/Projects/ProjectsSection';
 import SkillsSection from './components/Skills/SkillsSection';
 import EducationSection from './components/Education/EducationSection';
+import ContactSection from './components/Contact/ContactSection';
+import CloudRouter from './components/Shared/CloudRouter';
 
 function App() {
   return (
@@ -12,6 +14,10 @@ function App() {
       <ProjectsSection />
       <SkillsSection />
       <EducationSection />
+      <div className="relative bg-[#0B1120] flex justify-center -mt-16 pb-0 z-20">
+        <CloudRouter label="KNOWLEDGE_EGRESS" direction="down" />
+      </div>
+      <ContactSection />
     </div>
   );
 }

@@ -8,7 +8,6 @@ const ServerBlade = ({ label, href, isActive, delay, onClick, isMobile = false }
         }
 
         if (!href) return;
-        // Don't prevent default for external links
         if (href.startsWith('http')) return;
 
         e.preventDefault();
@@ -39,18 +38,11 @@ const ServerBlade = ({ label, href, isActive, delay, onClick, isMobile = false }
             animate={{ opacity: 1, [isMobile ? 'x' : 'y']: 0 }}
             transition={{ delay, duration: 0.5 }}
         >
-            {/* Rack Handle */}
             <div className={`rounded-full bg-slate-300 group-hover:bg-indigo-400 transition-colors ${isMobile ? 'w-1.5 h-8' : 'w-1 h-4 md:h-6'}`}></div>
-
-            {/* Label */}
             <span className={`font-mono font-bold tracking-widest ${isActive ? 'text-indigo-600' : 'text-slate-500'} group-hover:text-indigo-500 uppercase ${isMobile ? 'text-sm' : 'text-[10px] md:text-xs'}`}>
                 {label}
             </span>
-
-            {/* Status Light */}
             <div className={`rounded-full ${isActive ? 'bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]' : 'bg-slate-300 group-hover:bg-green-400'} transition-all ${isMobile ? 'w-2.5 h-2.5' : 'w-1.5 h-1.5 md:w-2 md:h-2'}`}></div>
-
-            {/* Mounting Screws */}
             <div className="absolute top-1 left-1 w-0.5 h-0.5 md:w-1 md:h-1 rounded-full bg-slate-300"></div>
             <div className="absolute bottom-1 left-1 w-0.5 h-0.5 md:w-1 md:h-1 rounded-full bg-slate-300"></div>
             <div className="absolute top-1 right-1 w-0.5 h-0.5 md:w-1 md:h-1 rounded-full bg-slate-300"></div>
@@ -80,7 +72,6 @@ const CdnRackNavigation = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    // Lock body scroll when menu is open
     useEffect(() => {
         if (isMobileMenuOpen) {
             document.body.style.overflow = 'hidden';
@@ -100,12 +91,11 @@ const CdnRackNavigation = () => {
         { label: 'Education', href: '#education' },
         { label: 'Blog', href: 'https://dev.to/thakurrishabh' },
         { label: 'Guitar', href: 'https://www.instagram.com/guitar_symphonies?igsh=MTRmbjFjbjBpZ2k1Mg==' },
-        { label: 'Contact', href: 'mailto:rishabh.singh.thakur@gmail.com' },
+        { label: 'Contact', href: '#contact' },
     ];
 
     return (
         <div className="w-full max-w-4xl mx-auto z-50 relative">
-            {/* Desktop View (md+) - Unchanged */}
             <div className="hidden md:flex w-full h-16 bg-slate-200 rounded-b-xl border-x-4 border-b-4 border-slate-300 shadow-xl items-center justify-center px-2">
                 <ServerBlade label="Home" href="#" isActive={activeSection === 'home'} delay={0.1} />
                 <ServerBlade label="Work" href="#work" isActive={activeSection === 'work'} delay={0.2} />
@@ -113,7 +103,6 @@ const CdnRackNavigation = () => {
                 <ServerBlade label="Skills" href="#skills" isActive={activeSection === 'skills'} delay={0.3} />
                 <ServerBlade label="Education" href="#education" isActive={activeSection === 'education'} delay={0.4} />
 
-                {/* Dedicated Blog Server */}
                 <motion.a
                     href="https://dev.to/thakurrishabh"
                     target="_blank"
@@ -129,17 +118,14 @@ const CdnRackNavigation = () => {
                         <span className="text-[10px] text-slate-400 font-mono mb-1">CDN NODE</span>
                         <span className="text-sm font-bold text-white tracking-widest">BLOG</span>
                     </div>
-                    {/* Blinking Activity Light */}
                     <div className="absolute right-2 top-2 w-1.5 h-1.5 rounded-full bg-sky-400 animate-ping"></div>
                 </motion.a>
 
-                <ServerBlade label="Contact" href="mailto:rishabh.singh.thakur@gmail.com" isActive={false} delay={0.6} />
+                <ServerBlade label="Contact" href="#contact" isActive={activeSection === 'contact'} delay={0.6} />
                 <ServerBlade label="Guitar" href="https://www.instagram.com/guitar_symphonies?igsh=MTRmbjFjbjBpZ2k1Mg==" isActive={false} delay={0.7} />
             </div>
 
-            {/* Mobile View (< md) */}
             <div className="md:hidden fixed top-4 right-4 z-[100]">
-                {/* System Access Button (Themed Hamburger) */}
                 <motion.button
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                     initial={{ scale: 0, rotate: 90 }}
@@ -147,24 +133,17 @@ const CdnRackNavigation = () => {
                     className="w-12 h-12 bg-slate-800 rounded-md border-2 border-slate-600 shadow-xl flex flex-col items-center justify-center gap-1.5 relative overflow-hidden group cursor-pointer active:scale-95 transition-transform"
                     style={{ pointerEvents: 'auto' }}
                 >
-                    {/* Metallic Gradient Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-br from-slate-700/50 to-slate-900/80 pointer-events-none"></div>
-
-                    {/* Server Vents / Lines */}
                     <div className="w-8 h-1 bg-slate-500 rounded-full group-hover:bg-sky-400 transition-colors"></div>
                     <div className="w-8 h-1 bg-slate-500 rounded-full group-hover:bg-sky-400 transition-colors"></div>
                     <div className="w-8 h-1 bg-slate-500 rounded-full group-hover:bg-sky-400 transition-colors"></div>
-
-                    {/* Status LED */}
                     <div className="absolute top-1 left-1 w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse shadow-[0_0_5px_rgba(34,197,94,0.6)]"></div>
                 </motion.button>
             </div>
 
-            {/* Mobile Menu Overlay */}
             <AnimatePresence>
                 {isMobileMenuOpen && (
                     <>
-                        {/* Backdrop */}
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
@@ -172,8 +151,6 @@ const CdnRackNavigation = () => {
                             onClick={() => setIsMobileMenuOpen(false)}
                             className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[90] md:hidden"
                         />
-
-                        {/* Drawer (Right Side) */}
                         <motion.div
                             initial={{ x: '100%' }}
                             animate={{ x: 0 }}
@@ -181,13 +158,10 @@ const CdnRackNavigation = () => {
                             transition={{ type: "spring", damping: 25, stiffness: 200 }}
                             className="fixed top-0 right-0 h-full w-[300px] bg-slate-900 border-l border-slate-700 z-[100] md:hidden shadow-2xl overflow-y-auto"
                         >
-                            {/* Drawer Header */}
                             <div className="p-6 bg-slate-800/50 border-b border-slate-700">
                                 <h3 className="font-mono text-sm text-sky-400 tracking-wider font-bold mb-1">RACK_MOUNT_ACCESS</h3>
                                 <div className="text-[10px] text-slate-500 font-mono">SYS_ADMIN_CONSOLE</div>
                             </div>
-
-                            {/* Server Blade Stack */}
                             <div className="p-4 flex flex-col gap-2">
                                 {navItems.map((item, index) => (
                                     <ServerBlade
@@ -201,8 +175,6 @@ const CdnRackNavigation = () => {
                                     />
                                 ))}
                             </div>
-
-                            {/* Footer Status */}
                             <div className="absolute bottom-0 w-full p-6 bg-slate-800 border-t border-slate-700">
                                 <div className="flex items-center justify-between text-xs font-mono text-slate-500">
                                     <span>CONNECTION: SECURE</span>
@@ -214,7 +186,6 @@ const CdnRackNavigation = () => {
                 )}
             </AnimatePresence>
 
-            {/* Hanging Cables (Visual Decoration - Desktop Only) */}
             <div className="hidden md:block absolute top-16 left-10 w-[2px] h-12 bg-slate-400/30"></div>
             <div className="hidden md:block absolute top-16 right-10 w-[2px] h-8 bg-slate-400/30"></div>
         </div>
