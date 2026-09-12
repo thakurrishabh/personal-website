@@ -1,5 +1,26 @@
 export const skillsData = [
     {
+        id: "ai-modern-tech",
+        title: "AI & Modern Tech",
+        description: "Generative AI, Agents & Innovation",
+        color: "indigo",
+        icon: "brain",
+        skills: [
+            { name: "Cursor", slug: "cursor" },
+            { name: "Gemini", slug: "googlegemini" },
+            { name: "GenAI Gateway", slug: "googlecloud" },
+            { name: "OpenAI", slug: "openai" },
+            { name: "GPT-4o", slug: "openai" },
+            { name: "Claude", slug: "anthropic" },
+            { name: "GitHub Copilot", slug: "githubcopilot" },
+            { name: "MCP", slug: "anthropic" },
+            { name: "Agent Skills", slug: "openai" },
+            { name: "Imagen", slug: "stabilityai" },
+            { name: "Manim", slug: "python" },
+            { name: "TTS", slug: "openai" }
+        ]
+    },
+    {
         id: "cloud-sre",
         title: "Cloud & SRE",
         description: "Cloud Infrastructure & Site Reliability",
@@ -8,77 +29,60 @@ export const skillsData = [
         skills: [
             { name: "GCP", slug: "googlecloud" },
             { name: "GKE", slug: "googlecloud" },
-            { name: "Cloud Run", slug: "googlecloud" },
-            { name: "Cloud Functions", slug: "googlecloud" },
-            { name: "PubSub", slug: "googlecloud" },
-            { name: "VPC", slug: "googlecloud" },
-            { name: "DNS", slug: "googlecloud" },
-            { name: "Secret Manager", slug: "googlecloud" },
-            { name: "Linux", slug: "linux" },
+            { name: "Kubernetes", slug: "kubernetes" },
+            { name: "Anthos", slug: "googlecloud" },
+            { name: "KubeVirt", slug: "kubernetes" },
+            { name: "FluxCD", slug: "flux" },
+            { name: "Terraform", slug: "terraform" },
+            { name: "Ansible", slug: "ansible" },
+            { name: "Docker", slug: "docker" },
+            { name: "Helm", slug: "helm" },
             { name: "Istio", slug: "istio" },
-            { name: "Firebase", slug: "firebase" },
-            { name: "Vercel", slug: "vercel" },
-            { name: "IBM MQ", slug: "ibm" }
+            { name: "IBM MQ", slug: "ibm" },
+            { name: "ActiveMQ", slug: "apache" },
+            { name: "Postgres", slug: "postgresql" },
+            { name: "DB2", slug: "ibm" }
         ]
     },
     {
         id: "devops-automation",
-        title: "DevOps & Automation",
-        description: "CI/CD, IaC & Containerization",
+        title: "CI/CD & Observability",
+        description: "Pipelines, IaC & Monitoring",
         color: "emerald",
         icon: "terminal",
         skills: [
-            { name: "Kubernetes", slug: "kubernetes" },
-            { name: "Docker", slug: "docker" },
-            { name: "Ansible", slug: "ansible" },
-            { name: "Terraform", slug: "terraform" },
-            { name: "GitLab CI", slug: "gitlab" },
-            { name: "Helm", slug: "helm" },
-            { name: "Kubevirt", slug: "kubernetes" }, // Using k8s icon as fallback/related
+            { name: "GitLab", slug: "gitlab" },
             { name: "Jsonnet", slug: "json" },
             { name: "Prometheus", slug: "prometheus" },
             { name: "Grafana", slug: "grafana" },
-            { name: "Playwright", slug: "playwright" },
-            { name: "Scripting", slug: "gnubash" },
-            { name: "Containerization", slug: "docker" }
+            { name: "Cloud Functions", slug: "googlecloud" },
+            { name: "Pub/Sub", slug: "googlecloud" },
+            { name: "CloudSQL", slug: "googlecloud" },
+            { name: "MySQL", slug: "mysql" },
+            { name: "Azure AD", slug: "microsoftazure" },
+            { name: "Confluence", slug: "confluence" }
         ]
     },
     {
         id: "app-development",
-        title: "App Development",
-        description: "Fullstack Engineering (Web & Mobile)",
+        title: "Apps & Security",
+        description: "Fullstack Engineering & Compliance",
         color: "amber",
         icon: "code",
         skills: [
             { name: "Python", slug: "python" },
+            { name: "JavaScript", slug: "javascript" },
+            { name: "Flask", slug: "flask" },
             { name: "React", slug: "react" },
             { name: "Flutter", slug: "flutter" },
-            { name: "JavaScript", slug: "javascript" },
-            { name: "HTML", slug: "html5" },
-            { name: "Flask", slug: "flask" },
-            { name: "Bootstrap", slug: "bootstrap" },
+            { name: "Firebase", slug: "firebase" },
+            { name: "Cloud Run", slug: "googlecloud" },
             { name: "Supabase", slug: "supabase" },
-            { name: "MySQL", slug: "mysql" },
             { name: "Stripe", slug: "stripe" },
-            { name: "OAuth", slug: "auth0" }
-        ]
-    },
-    {
-        id: "ai-modern-tech",
-        title: "AI & Modern Tech",
-        description: "Generative AI, Agents & Innovation",
-        color: "indigo",
-        icon: "brain",
-        skills: [
-            { name: "OpenAI API", slug: "openai" },
-            { name: "Gemini API", slug: "googlegemini" },
-            { name: "Claude Code", slug: "anthropic" },
-            { name: "GitHub Copilot", slug: "githubcopilot" },
             { name: "FFmpeg", slug: "ffmpeg" },
-            { name: "Lovable.dev", slug: "react" },
-            { name: "Daytona", slug: "docker" }, // Proxy: Dev Envs
-            { name: "TTS & Voice", slug: "openai" }, // Proxy: AI Voice
-            { name: "Image Gen", slug: "stabilityai" } // Proxy: Gen AI
+            { name: "Vercel", slug: "vercel" },
+            { name: "OWASP", slug: "owasp" },
+            { name: "HL7 FHIR", slug: "hl7fhir" }
         ]
     }
 ];

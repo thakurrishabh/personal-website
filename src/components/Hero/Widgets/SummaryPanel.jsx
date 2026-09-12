@@ -20,10 +20,10 @@ const SummaryPanel = () => {
                     Helping businesses leverage <span className="text-indigo-600 font-bold bg-indigo-50 px-1 rounded">AI</span> and <span className="text-sky-600 font-bold bg-sky-50 px-1 rounded">cloud infrastructure</span> to automate workflows, reduce operational costs, and accelerate time-to-market.
                 </p>
                 <p className="text-slate-600 text-base leading-relaxed mb-4">
-                    Cloud Engineer & SRE with <span className="font-semibold text-slate-800">4+ years</span> of hands-on experience building scalable GCP infrastructure for <span className="font-semibold text-slate-800">1000+ SDM stores</span> across Canada.
+                    AI Cloud Engineer & SRE with <span className="font-semibold text-slate-800">~5 years</span> building scalable GCP infrastructure with <span className="font-semibold text-slate-800">HL7 FHIR</span> compliance for <span className="font-semibold text-slate-800">1000+ SDM stores</span> across Canada.
                 </p>
                 <p className="text-slate-500 text-sm">
-                    Currently available for projects involving AI integration, cloud engineering, automation, and full-stack AI applications.
+                    Built 3 full-stack AI SaaS apps, including one production-grade platform with Google Auth, Stripe payments, and OWASP security.
                 </p>
             </div>
         </motion.div>
